@@ -1,4 +1,4 @@
-import { FlatList, StatusBar, StyleSheet, Text, View } from 'react-native'
+import { FlatList, ScrollView, StatusBar, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import CustomInput from '../../components/CustomInput'
 import COLOR from '../../assets/Colors'
@@ -10,7 +10,10 @@ const HomeScreen = () => {
       <View style={styles.headingContainer}>
         <Text style={styles.heading}> Component Page</Text>
       </View>
+      <ScrollView>
       <CustomInput placeholder={'Custom Text'} style={styles.CustomInput} />
+
+      </ScrollView>
 
 
     </View>
@@ -26,6 +29,7 @@ const styles = StyleSheet.create({
   },
   headingContainer: {
     backgroundColor: COLOR.background,
+    marginBottom:20
   },
   heading: {
     textAlign: 'center',
@@ -35,5 +39,9 @@ const styles = StyleSheet.create({
   },
   CustomInput: {
     height: 50,
+    width: '100%',
+    borderColor: COLOR.borderColor,
+    borderWidth: 1,
+    borderRadius: 10
   }
 })
