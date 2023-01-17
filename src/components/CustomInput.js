@@ -5,6 +5,7 @@ import {
   TextInput,
   View
 } from 'react-native'
+import COLOR from '../assets/Colors'
 
 
 
@@ -20,7 +21,8 @@ const CustomInput = ({
   multiline = false,
   numberofLines = 1,
   inputStyle,
-  style
+  style,
+  type= "PRIMARY"
 }) => {
   return (
     <View style={styles.container}>
@@ -29,7 +31,7 @@ const CustomInput = ({
         value={value}
         onChangeText={setValue}
         placeholder={placeholder}
-        style={[styles.input, styles[`input_${inputStyle}`], style]}
+        style={[styles.input, styles[`input_${inputStyle}`, styles[`container_${type}`]], style]}
         secureTextEntry={secureTextEntry}
         editable={isEnable}
         keyboardType={inputType}
@@ -47,11 +49,11 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     borderRadius: 15,
     paddingHorizontal: 10,
-
-    marginHorizontal: 0,
+    marginHorizontal: 10,
     marginVertical: 10,
     flexDirection: 'row',
     alignItems: 'center'
+    
   },
   input: {
     width: "100%",
@@ -60,5 +62,17 @@ const styles = StyleSheet.create({
   },
   input_Multiline: {
     textAlignVertical: 'top'
+  },
+  container_PRIMARY:{
+    backgroundColor: '#000',
+
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 10,
+      height: 5,
+    },
+    shadowOpacity: 0.3,
+    shadowRadius: 5.46,
+    elevation: 9,
   }
 })
