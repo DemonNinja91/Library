@@ -1,2 +1,6 @@
 # Library
- Custom React Native Library for users
+ Custom React Native Component Library for users
+ 
+ Components Included:
+ 1. Input
+ 2. 
